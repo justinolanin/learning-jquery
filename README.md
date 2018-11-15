@@ -1,2 +1,2 @@
 # learning-jquery
-# Website at http://learning-jquery.justinolanin.com/
+# Website at learning-jquery.justinolanin.com/
