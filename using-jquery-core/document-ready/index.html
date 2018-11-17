@@ -1,0 +1,86 @@
+<!--01. Explain which of the following will load first and why.
+
+The document ready will load first; it is excuted when the DOM tree is built but does not wait for things
+like loading large files. The window onload will wait for the page to be fully loaded including inner frames and images.
+To test this out I added and image at the bottom of the page. I can see the document ready show in console, then the image
+on the page, then the window onload in console.
+
+*Use document ready when you have a large amount of files (images, ads, scripts) so it does
+not consume a large amoount of time. Use window onload when you have less amount of stuff
+
+-->
+
+<!--02. Explain what must be completed before the document ready function is executed.
+
+The document ready function will run when the HTML is ready, but before images and other resources have finished.
+This is the soonest time that you can change the DOM with JavaScript
+
+-->
+
+<!--03. Explain what must be completed before the widow on load function is executed.
+
+The window onload will run after everything has loaded including images
+
+-->
+
+<!doctype html>
+<html>
+<head>
+<title>Learning jQuery 005 | Using jQuery Core | $( document ).ready() | Assignment</title>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+<center><font size="+3"><B><I>Learning jQuery 005 | Using jQuery Core | $( document ).ready() | Assignment</B></I></font></center>
+<BR>
+<BR>
+<BR>
+<font size="+2"><I>event.preventDefault example:</I></font>
+<BR>
+<BR>
+<a href="http://jquery.com/">Here is a link to go to jquery (and will show a prompt instead!!!)</a>
+<script src="assets/jquery/jquery.js"></script>
+<script>
+$( document ).ready(function() {
+    $( "a" ).click(function( event ) {
+        alert( "Clicking here will not allow you to go to the link" );
+        event.preventDefault();
+    });
+});
+</script>
+<BR>
+<BR>
+<BR>
+<font size="+2"><I><pre>$(document).ready(function()</pre></I></font>
+This will load a function when the document is loaded. I added an image at the bottom of the page. I can see in the console log that document ready shows first, then the image shows, then the window onload shows. For this example I have it logging to the console but the code is;
+<pre>
+  $(document).ready(function() {
+      console.log("This is the document loaded log.");
+  });
+</pre>
+<script>
+  $(document).ready(function() {
+      console.log("This is the document loaded log.");
+  });
+</script>
+<BR>
+<BR>
+<font size="+2"><I><pre>$(window).on("load", function()</pre></I></font>
+This will load a function when the window is loaded. For this example I have it logging to the console but the code is;
+<pre>
+  $(window).on("load", function() {
+      console.log("This is my log for the window.onload function example");
+  });
+</pre>
+<script>
+  $(window).on("load", function() {
+      console.log("This is my log for the window.onload function example");
+  });
+</script>
+<BR>
+<BR>
+<BR>
+<center>
+<img src="assets/images/frink.jpg" alt="simpsons joke">
+</center>
+</body>
+</html>
